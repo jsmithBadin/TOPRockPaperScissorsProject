@@ -27,36 +27,41 @@ console.log(getComputerChoice());
 //Else, rock beats scissors, scissors beats paper, paper beats rock
 //N.B. 4th condition exists in case the player does not send a proper input
 function playRound(playerSelection, computerSelection){
-    player = playerSelection.toUpperCase();
-    computer = computerSelection.toUpperCase();
+    const player = playerSelection.toUpperCase();
+    const computer = computerSelection.toUpperCase();
     if (player === computer){
-        return "It's a tie, you both threw " + player + ".  Please play again!"
+        return "It's a tie, you both threw " + player + ".  Please play again!";
     }
     else if (player === "ROCK"){
         if (computer === "SCISSORS"){
-            return "You win!  Rock beats Scissors."
+            return "You win!  Rock beats Scissors.";
         }
         else {
-            return "You lose.  Paper beats Rock."
+            return "You lose.  Paper beats Rock.";
         }
     }
     else if (player === "PAPER"){
         if (computer === "ROCK"){
-            return "You win!  Paper beats Rock."
+            return "You win!  Paper beats Rock.";
         }
         else {
-            return "You lose.  Scissors beats Paper."
+            return "You lose.  Scissors beats Paper.";
         }
     }
     else if (player === "SCISSORS"){
         if (computer === "PAPER"){
-            return "You win!  Scissors beats Paper."
+            return "You win!  Scissors beats Paper.";
         }
         else {
-            return "You lose.  Rock beats Scissors."
+            return "You lose.  Rock beats Scissors.";
         }
     }
     else{
-        return "Sorry, you don't choose an acceptable response.  Please play again and use 'Rock', 'Paper', or 'Scissors'!"
+        return "Sorry, you don't choose an acceptable response.  Please play again and use 'Rock', 'Paper', or 'Scissors'!";
     }
 }
+
+//Testing that playRound functions as expected:
+const playerSelection = "Scissors";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
