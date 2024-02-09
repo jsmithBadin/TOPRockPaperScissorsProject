@@ -84,14 +84,17 @@ function playGame(){
     let tieScore = 0;
     //play 5 rounds, track winner of each round
     for (let i = 1; i < 6; i++){
-        let playerSelection = prompt("Let's play Rock, Paper, Scissors.  Make your choice!");
-        let computerSelection = getComputerChoice();
         // Display results as of current round:
         console.log("The current score is:");
         console.log("You: " + playerScore);
         console.log("Computer: " + computerScore);
         console.log("Ties: " + tieScore);
 
+        //Make selections for round
+        let playerSelection = prompt("Let's play Rock, Paper, Scissors.  Make your choice!");
+        let computerSelection = getComputerChoice();
+        
+        //Determine winner
         switch (playRound(playerSelection, computerSelection)) {
             case "tie":
                 tieScore += 1;
