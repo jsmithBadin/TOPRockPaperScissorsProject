@@ -70,8 +70,52 @@ function playRound(playerSelection, computerSelection){
 }
 
 //Testing that playRound functions as expected:
+// Edit: commenting out so testing does not interfere with primary operation
+/*
 const playerSelection = "Scissors";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+*/
 
 //Make playGame function to run the actual game.  Play 5 rounds for one game, winner of each round displayed through console.log, overall winner displayed at the end.  
+function playGame();
+    //create variables to track scores
+    let playerScore = 0;
+    let computerScore = 0;
+    let tieScore = 0;
+    //play 5 rounds, track winner of each round
+    for (let i = 1; i < 6; i++){
+        let playerSelection = prompt();
+        let computerSelection = getComputerChoice();
+        switch (playRound(playerSelection, computerSelection)) {
+            case "tie":
+                tieScore += 1;
+                break;
+            case "player":
+                playerScore += 1;
+                break;
+            case "computer":
+                computerScore += 1;
+                break;
+            default:
+                //this occurs in case of bad input.  resets the round and allows player to continue.
+                console.log("I'm sorry, that wasn't a valid response, please choose 'Rock', 'Paper', or 'Scissors'.");
+                i -= 1;
+        
+        // Display results as of current round:
+        console.log("The current score is:");
+        console.log("You: " + playerScore);
+        console.log("Computer: " + computerScore);
+        console.log("Ties " + tieScore);
+        }
+
+    //Display result of full match
+    if (playerScore > computerScore) {
+        console.log("You win!  You beat the computer by a score of " + playerScore + " to " + computerScore ", with " + tieScore + " ties.");
+    } else if (playerScore < computerScore) {
+        console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore ", with " + tieScore + " ties.");
+    } else {
+        console.log("You tied with the computer, with each of you getting " + playerScore + " wins, and " + tieScore + "ties.");
+    }
+
+    }
