@@ -84,7 +84,7 @@ function playGame(){
     let tieScore = 0;
     //play 5 rounds, track winner of each round
     for (let i = 1; i < 6; i++){
-        let playerSelection = prompt();
+        let playerSelection = prompt("Let's play Rock, Paper, Scissors.  Make your choice!");
         let computerSelection = getComputerChoice();
         switch (playRound(playerSelection, computerSelection)) {
             case "tie":
@@ -111,9 +111,9 @@ function playGame(){
 
     //Display result of full match
     if (playerScore > computerScore) {
-        console.log("You win!  You beat the computer by a score of " + playerScore + " to " + computerScore " with " + tieScore + " ties.");
+        console.log("You win!  You beat the computer by a score of " + playerScore + " to " + computerScore + ", with " + tieScore + " ties.");
     } else if (playerScore < computerScore) {
-        console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore " with " + tieScore + " ties.");
+        console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore + ", with " + tieScore + " ties.");
     } else {
         console.log("You tied with the computer, with each of you getting " + playerScore + " wins and " + tieScore + "ties.");
     }
