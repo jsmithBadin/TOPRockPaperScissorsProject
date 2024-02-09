@@ -26,34 +26,42 @@ console.log(getComputerChoice());
 //If inputs match, declare a tie
 //Else, rock beats scissors, scissors beats paper, paper beats rock
 //N.B. 4th condition exists in case the player does not send a proper input
+//Edit note: changing this function to return whether computer or player won the round, and console.logging the winner of the round
 function playRound(playerSelection, computerSelection){
     const player = playerSelection.toUpperCase();
     const computer = computerSelection.toUpperCase();
     if (player === computer){
-        return "It's a tie, you both threw " + player + ".  Please play again!";
+        console.log("It's a tie, you both threw " + player + ".  Please play again!");
+        return "tie";
     }
     else if (player === "ROCK"){
         if (computer === "SCISSORS"){
-            return "You win!  Rock beats Scissors.";
+            console.log("You win!  Rock beats Scissors.")
+            return "player";
         }
         else {
-            return "You lose.  Paper beats Rock.";
+            console.log("You lose.  Paper beats Rock.");
+            return "computer";
         }
     }
     else if (player === "PAPER"){
         if (computer === "ROCK"){
-            return "You win!  Paper beats Rock.";
+            console.log("You win!  Paper beats Rock.");
+            return "player";
         }
         else {
-            return "You lose.  Scissors beats Paper.";
+            console.log("You lose.  Scissors beats Paper.");
+            return "computer";
         }
     }
     else if (player === "SCISSORS"){
         if (computer === "PAPER"){
-            return "You win!  Scissors beats Paper.";
+            console.log("You win!  Scissors beats Paper.");
+            return "player";
         }
         else {
-            return "You lose.  Rock beats Scissors.";
+            console.log("You lose.  Rock beats Scissors.");
+            return "computer";
         }
     }
     else{
@@ -65,3 +73,5 @@ function playRound(playerSelection, computerSelection){
 const playerSelection = "Scissors";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+
+//Make playGame function to run the actual game.  Play 5 rounds for one game, winner of each round displayed through console.log, overall winner displayed at the end.  
