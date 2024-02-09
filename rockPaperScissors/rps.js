@@ -1,4 +1,3 @@
-console.log("Testing 1, 2, 3, can anybody hear me?");
 /*Rock, Paper, Scissors simulator is a program that allows the user to play Rock, Paper, Scissors, against a computer opponent.*/
 
 //Make a function called getComputerChoice that determines what the computer is going to "throw" at the player. 
@@ -18,7 +17,7 @@ function getComputerChoice(){
 
 // console.log to test that getComputerChoice is working.  
 //Keeping this for now so that I can verify that the game plays by the rules when fully coded.
-console.log(getComputerChoice());
+/*console.log(getComputerChoice());*/
 
 // make a function, play to play a round of RPS, using parameters "playerSelection" and "computerSelection".  
 //The function returns a string announcing result.
@@ -78,7 +77,7 @@ console.log(playRound(playerSelection, computerSelection));
 */
 
 //Make playGame function to run the actual game.  Play 5 rounds for one game, winner of each round displayed through console.log, overall winner displayed at the end.  
-function playGame();
+function playGame(){
     //create variables to track scores
     let playerScore = 0;
     let computerScore = 0;
@@ -108,14 +107,16 @@ function playGame();
         console.log("Computer: " + computerScore);
         console.log("Ties " + tieScore);
         }
+    }
 
     //Display result of full match
     if (playerScore > computerScore) {
-        console.log("You win!  You beat the computer by a score of " + playerScore + " to " + computerScore ", with " + tieScore + " ties.");
+        console.log("You win!  You beat the computer by a score of " + playerScore + " to " + computerScore " with " + tieScore + " ties.");
     } else if (playerScore < computerScore) {
-        console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore ", with " + tieScore + " ties.");
+        console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore " with " + tieScore + " ties.");
     } else {
-        console.log("You tied with the computer, with each of you getting " + playerScore + " wins, and " + tieScore + "ties.");
+        console.log("You tied with the computer, with each of you getting " + playerScore + " wins and " + tieScore + "ties.");
     }
+}
 
-    }
+playGame();
