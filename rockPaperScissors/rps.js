@@ -86,6 +86,12 @@ function playGame(){
     for (let i = 1; i < 6; i++){
         let playerSelection = prompt("Let's play Rock, Paper, Scissors.  Make your choice!");
         let computerSelection = getComputerChoice();
+        // Display results as of current round:
+        console.log("The current score is:");
+        console.log("You: " + playerScore);
+        console.log("Computer: " + computerScore);
+        console.log("Ties: " + tieScore);
+
         switch (playRound(playerSelection, computerSelection)) {
             case "tie":
                 tieScore += 1;
@@ -101,11 +107,6 @@ function playGame(){
                 console.log("I'm sorry, that wasn't a valid response, please choose 'Rock', 'Paper', or 'Scissors'.");
                 i -= 1;
         
-        // Display results as of current round:
-        console.log("The current score is:");
-        console.log("You: " + playerScore);
-        console.log("Computer: " + computerScore);
-        console.log("Ties " + tieScore);
         }
     }
 
@@ -115,7 +116,7 @@ function playGame(){
     } else if (playerScore < computerScore) {
         console.log("Sorry, you lose!  You lost to the computer by a score of " + computerScore + " to " + playerScore + ", with " + tieScore + " ties.");
     } else {
-        console.log("You tied with the computer, with each of you getting " + playerScore + " wins and " + tieScore + "ties.");
+        console.log("You tied with the computer, with each of you getting " + playerScore + " wins and " + tieScore + " ties.");
     }
 }
 
